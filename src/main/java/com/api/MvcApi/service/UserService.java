@@ -15,4 +15,5 @@ public interface UserService {
     void updateUsername(String id, String newUsername);
     // 유저 삭제
     void deleteUser(String id);
+
 }
