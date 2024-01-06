@@ -5,7 +5,6 @@ import com.api.MvcApi.domain.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,11 +35,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUsername(@RequestBody String id, @RequestBody User user) {
+    public void updateUsername(String id, User user) {
         Optional<User> updateUser = userRepo.findById(id);
 
         updateUser.ifPresent(selectUser -> {
-            selectUser.setId(user.getId());
             selectUser.setUsername(user.getUsername());
             selectUser.setPassword(user.getPassword());
 
