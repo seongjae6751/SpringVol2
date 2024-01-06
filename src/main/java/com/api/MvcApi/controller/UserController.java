@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PutMapping ("/{id}")
-    public void updateUserName(@RequestParam @PathVariable(name = "id") String id,  @RequestBody User user) {
+    public void updateUserName(@PathVariable(name = "id") String id,  @RequestBody User user) {
         userServiceImpl.updateUsername(id, user);
     }
 
