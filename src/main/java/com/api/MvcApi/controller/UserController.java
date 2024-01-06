@@ -18,28 +18,28 @@ public class UserController {
     }
 
     @GetMapping("")
-    public List<User> FindAll(){
+    public List<User> findAll(){
         return userServiceImpl.findAll();
     }
 
     @GetMapping("/{id}")
-    public User FindUsers(@PathVariable(name = "id") String id){
+    public User findUsers(@PathVariable(name = "id") String id){
         return userServiceImpl.findById(id);
     }
 
     @PostMapping("")
-    public User CreateUser(User newUser) {
+    public User createUser(User newUser) {
         return userServiceImpl.createUser(newUser);
     }
 
     @PutMapping ("/{id}")
-    public void UpdateUserName(@RequestParam @PathVariable(name = "id") String id,  @RequestBody User user) {
+    public void updateUserName(@RequestParam @PathVariable(name = "id") String id,  @RequestBody User user) {
         userServiceImpl.updateUsername(id, user);
     }
 
 
     @DeleteMapping("/{id}")
-    public void DeleteUsers(@PathVariable(name = "id") String id){
+    public void deleteUsers(@PathVariable(name = "id") String id){
         userServiceImpl.deleteUser(id);
     }
 
