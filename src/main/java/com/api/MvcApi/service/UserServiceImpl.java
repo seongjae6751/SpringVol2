@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepo.findByName(username)
+        return userRepo.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
     }
 

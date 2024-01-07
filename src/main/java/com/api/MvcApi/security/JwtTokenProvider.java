@@ -37,11 +37,12 @@ public class JwtTokenProvider {
     }
 
     // JWT 토큰 생성
-    public String createToken(String userPk) {
+    public String createToken(String userPk, List<String> roles) {
         // jwt는 .을 구분자로 3가지의 문자열로 되어있다.(header.payload.signature)
         // 여기서 payload부분에 토큰에 담을 정보가 들어있다.
         // 여기에 담는 정보의 한 '조각'을 클레임(claim)이라 한다.
         Claims claims = Jwts.claims().setSubject(userPk);
+        claims.put("roles", roles); // 정보는 key / value 쌍으로 저장된다.
         Date now = new Date();
 
         return Jwts.builder()
