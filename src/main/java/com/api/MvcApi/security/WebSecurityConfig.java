@@ -45,7 +45,7 @@ public class WebSecurityConfig {
         http  // 권한 설정
             .authorizeHttpRequests(authorize -> authorize
             .requestMatchers("/admin/**").hasRole("ADMIN")
-            .requestMatchers("/user/**").hasRole("USER")
+            .requestMatchers("/user1/**").hasRole("USER")
             .requestMatchers("/**").permitAll()
             .anyRequest().permitAll() // 그외 나머지 요청은 모두 거절
             );
